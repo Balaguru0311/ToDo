@@ -2,7 +2,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';  
 
 const App = () => {  
-    const [todos, setTodos] = useState([]);  
+    const [todos, setTodos] = useState([{
+        id: 1,
+        text:"Wakeup"
+    },
+    {
+        id:2,
+        text:"Running",
+    },
+    {
+        id:3,
+        text:"Coding",
+    }]);  
     const [newText, setNewText] = useState('');  
     const [updateId, setUpdateId] = useState(null); // To track which todo is being updated  
 
@@ -63,6 +74,7 @@ const App = () => {
                 <button onClick={handleUpdate}>Update Todo</button>  
             ):
             <button onClick={handleAdd}>Add Todo</button>}
+
             {todos.map(todo => (  
                 <div key={todo._id}>  
                     <span>{todo.text}</span>  
