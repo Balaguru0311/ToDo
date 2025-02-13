@@ -6,6 +6,7 @@ const App = () => {
     const [newText, setNewText] = useState('');  
     const [updateId, setUpdateId] = useState(null); // To track which todo is being updated  
 
+    
     useEffect(() => {  
         // Fetch the initial todos from the backend  
         const fetchTodos = async () => {  
